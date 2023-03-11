@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Inbox
+      Upcoming Parties
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,12 +14,12 @@
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">
-        Inbox
+        Upcoming Parties
       </ion-title>
     </ion-toolbar>
   </ion-header>
   
   <ion-list>
-    <app-message *ngFor="let party of getParties()" [party]="party"></app-message>
+    <app-party *ngFor="let party of getParties()" [party]="party"></app-party>
   </ion-list>
 </ion-content>
