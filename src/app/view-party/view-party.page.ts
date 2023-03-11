@@ -18,7 +18,7 @@ export class ViewPartyPage implements OnInit {
 
   ngOnInit() {
     const id = this.activatedRoute.snapshot.paramMap.get('id') as string;
-    this.party = this.data.getPartyById(parseInt(id, 10));
+    this.party = this.data.getPartyById(parseInt(id));
   }
 
   getBackButtonText() {

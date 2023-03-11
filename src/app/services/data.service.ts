@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 
 export interface Party {
-  Name: string;
-  Description: string;
+  name: string;
+  description: string;
   date: string;
-  Users: User[];
+  users: User[];
   id: number;
 }
 export interface User {
-  Name: string;
-  Surname: string;
-  Phone: string;
+  name: string;
+  surname: string;
+  phone: string;
 }
 @Injectable({
   providedIn: 'root'
@@ -18,38 +18,38 @@ export interface User {
 export class DataService {
   public users: User[] = [
     {
-      Name: 'John',
-      Surname: 'Doe',
-      Phone: '123456789'
+      name: 'John',
+      surname: 'Doe',
+      phone: '123456789'
     },
     {
-      Name: 'Jane',
-      Surname: 'Doe',
-      Phone: '123456798'
+      name: 'Jane',
+      surname: 'Doe',
+      phone: '123456798'
     },
   ];
 
   public parties: Party[] = [
     {
-      Name: 'Party 1',
-      Description: 'Party 1 description',
+      name: 'Party 1',
+      description: 'Party 1 description',
       date: '2023-04-01',
-      Users: this.users,
+      users: this.users,
+      id: 0
+    },
+    {
+      name: 'Party 2',
+      description: 'Party 2 description',
+      date: '2023-04-02',
+      users: this.users,
       id: 1
     },
     {
-      Name: 'Party 2',
-      Description: 'Party 2 description',
-      date: '2023-04-02',
-      Users: this.users,
-      id: 2
-    },
-    {
-      Name: 'Party 3',
-      Description: 'Party 3 description',
+      name: 'Party 3',
+      description: 'Party 3 description',
       date: '2023-05-03',
-      Users: this.users,
-      id: 3
+      users: this.users,
+      id: 2
     },
   ];
 
