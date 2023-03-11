@@ -22,6 +22,14 @@
   <div class="ion-padding">
     <p>
       {{ party.description }}
+      
   </div>
-
+  <p>People Comming</p>
+  <ion-item *ngFor="let item of party.users">
+    <ion-label>{{ item.name }} {{item.surname}}
+      <span class="number">
+        <ion-note>{{ item.phone }}</ion-note>
+      </span>
+    </ion-label>
+  </ion-item>
 </ion-content>
