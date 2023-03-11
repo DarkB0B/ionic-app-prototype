@@ -74,5 +74,9 @@ export class DataService {
   public deleteParty(id: number): void {
     this.parties.splice(id, 1);
   }
+  
+  public getPartyUsers(id: number) {
+    return this.parties[id].users;
+  }
 
 }

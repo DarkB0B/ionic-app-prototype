@@ -23,4 +23,7 @@
     <p>
       {{ party.description }}
   </div>
+  <ion-list>
+    <app-user *ngFor="let user of getPartyUsers(party.id)" [user]="user"></app-user>
+  </ion-list>
 </ion-content>
