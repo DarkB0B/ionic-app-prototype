@@ -5,7 +5,9 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-buttons>
+  <button ion-button (click)="goNewPartyPage()">Create New Party </button>
+</ion-buttons>
 <ion-content [fullscreen]="true">
   <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
     <ion-refresher-content></ion-refresher-content>

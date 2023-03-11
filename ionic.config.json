@@ -1,7 +1,8 @@
 {
   "name": "Ionic App Prototype",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular",
   "id": "1c6336bc"
