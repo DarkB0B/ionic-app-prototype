@@ -1,83 +1,78 @@
 import { Injectable } from '@angular/core';
 
-export interface Message {
-  fromName: string;
-  subject: string;
+export interface Party {
+  Name: string;
+  Description: string;
   date: string;
+  Users: User[];
   id: number;
-  read: boolean;
 }
-
+export interface User {
+  Name: string;
+  Surname: string;
+  Phone: string;
+}
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  public messages: Message[] = [
+  public users: User[] = [
     {
-      fromName: 'Matt Chorsey',
-      subject: 'New event: Trip to Vegas',
-      date: '9:32 AM',
-      id: 0,
-      read: false
+      Name: 'John',
+      Surname: 'Doe',
+      Phone: '123456789'
     },
     {
-      fromName: 'Lauren Ruthford',
-      subject: 'Long time no chat',
-      date: '6:12 AM',
-      id: 1,
-      read: false
+      Name: 'Jane',
+      Surname: 'Doe',
+      Phone: '123456798'
+    },
+  ];
+
+  public parties: Party[] = [
+    {
+      Name: 'Party 1',
+      Description: 'Party 1 description',
+      date: '2023-04-01',
+      Users: this.users,
+      id: 1
     },
     {
-      fromName: 'Jordan Firth',
-      subject: 'Report Results',
-      date: '4:55 AM',
-      id: 2,
-      read: false
+      Name: 'Party 2',
+      Description: 'Party 2 description',
+      date: '2023-04-02',
+      Users: this.users,
+      id: 2
     },
     {
-      fromName: 'Bill Thomas',
-      subject: 'The situation',
-      date: 'Yesterday',
-      id: 3,
-      read: false
+      Name: 'Party 3',
+      Description: 'Party 3 description',
+      date: '2023-05-03',
+      Users: this.users,
+      id: 3
     },
-    {
-      fromName: 'Joanne Pollan',
-      subject: 'Updated invitation: Swim lessons',
-      date: 'Yesterday',
-      id: 4,
-      read: false
-    },
-    {
-      fromName: 'Andrea Cornerston',
-      subject: 'Last minute ask',
-      date: 'Yesterday',
-      id: 5,
-      read: false
-    },
-    {
-      fromName: 'Moe Chamont',
-      subject: 'Family Calendar - Version 1',
-      date: 'Last Week',
-      id: 6,
-      read: false
-    },
-    {
-      fromName: 'Kelly Richardson',
-      subject: 'Placeholder Headhots',
-      date: 'Last Week',
-      id: 7,
-      read: false
-    }
   ];
 
   constructor() { }
 
-  public getMessages(): Message[] {
-    return this.messages;
+  public getParties(): Party[] {
+    return this.parties;
   }
 
-  public getMessageById(id: number): Message {
-    return this.messages[id];
+  public getPartyById(id: number): Party {
+    return this.parties[id];
   }
+
+  public addParty(party: Party): void {
+    this.parties.push(party);
+  }
+
+  public updateParty(party: Party): void {
+    this.parties[party.id] = party;
+  }
+
+  public deleteParty(id: number): void {
+    this.parties.splice(id, 1);
+  }
+
 }
