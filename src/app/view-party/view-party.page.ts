@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { DataService, Party, User } from '../services/data.service';
+import { DataService, Party } from '../services/data.service';
 
 
 @Component({
@@ -11,8 +11,9 @@ import { DataService, Party, User } from '../services/data.service';
 export class ViewPartyPage implements OnInit {
 
   public party!: Party;
-  
+
   constructor(
+    
     private data: DataService,
     private activatedRoute: ActivatedRoute
   ) { }
@@ -25,7 +26,7 @@ export class ViewPartyPage implements OnInit {
   getBackButtonText() {
     const win = window as any;
     const mode = win && win.Ionic && win.Ionic.mode;
-    return mode === 'ios' ? 'Inbox' : '';
+    return mode === 'ios' ? 'Go Back To Party List' : '';
   }
-
+  
 }
