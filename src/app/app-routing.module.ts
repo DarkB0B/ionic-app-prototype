@@ -18,14 +18,12 @@ const routes: Routes = [
   {
     path: 'view-party',
     loadChildren: () => import('./view-party/view-party.module').then( m => m.ViewPartyPageModule)
-  },  {
+  },
+  {
     path: 'view-newparty',
     loadChildren: () => import('./view-newparty/view-newparty.module').then( m => m.ViewNewpartyPageModule)
   },
-  {
-    path: 'view-inviteuser',
-    loadChildren: () => import('./view-inviteuser/view-inviteuser.module').then( m => m.ViewInviteuserPageModule)
-  },
+
 
 
 ];
