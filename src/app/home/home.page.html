@@ -15,9 +15,16 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-list>
-    <app-party *ngFor="let party of getParties()" [party]="party"></app-party>
-  </ion-list>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <app-party
+          *ngFor="let party of getParties()"
+          [party]="party"
+        ></app-party>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
 
 <ion-fab slot="fixed" horizontal="end" vertical="bottom">

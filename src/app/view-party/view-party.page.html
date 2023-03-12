@@ -1,14 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button [text]="getBackButtonText()" defaultHref="/"></ion-back-button>
+      <ion-back-button
+        [text]="getBackButtonText()"
+        defaultHref="/"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="create"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" *ngIf="party">
   <ion-item>
-    <ion-icon aria-hidden="true" name="person-circle" color="primary"></ion-icon>
     <ion-label class="ion-text-wrap">
       <h2>
         {{ party.name }}
@@ -18,15 +25,26 @@
       </h2>
     </ion-label>
   </ion-item>
-  
-  <div class="ion-padding">
-    <p>
-      {{ party.description }}
-      
-  </div>
-  <p>People Comming</p>
+
+  <ion-item class="ion-padding">
+    <p>{{ party.description }}</p>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      <h2>Guests</h2>
+    </ion-label>
+
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+
   <ion-item *ngFor="let item of party.users">
-    <ion-label>{{ item.name }} {{item.surname}}
+    <ion-label
+      >{{ item.name }} {{item.surname}}
       <span class="number">
         <ion-note>{{ item.phone }}</ion-note>
       </span>
