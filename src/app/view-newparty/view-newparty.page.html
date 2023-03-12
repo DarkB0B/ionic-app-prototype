@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>view-newparty</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -15,11 +18,10 @@
     <ion-input type="text" [(ngModel)]="descriptionValue"></ion-input>
   </ion-item>
 
-   <ion-item>
+  <ion-item>
     <ion-label>Date</ion-label>
     <ion-datetime presentation="date" [(ngModel)]="dateValue"></ion-datetime>
-
   </ion-item>
 
-  <ion-button (click) = "Save()">Save</ion-button>
+  <ion-button (click)="Save()">Save</ion-button>
 </ion-content>
