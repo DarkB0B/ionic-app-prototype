@@ -24,6 +24,7 @@
     "@capacitor/haptics": "4.1.0",
     "@capacitor/keyboard": "4.1.1",
     "@capacitor/status-bar": "4.1.1",
+    "@ionic-native/contacts": "^4.20.0",
     "@ionic/angular": "^6.6.1",
     "ionic": "^5.4.16",
     "ionicons": "^6.0.3",

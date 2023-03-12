@@ -13,7 +13,7 @@ export class ViewPartyPage implements OnInit {
   public party!: Party;
 
   constructor(
-    
+
     private data: DataService,
     private activatedRoute: ActivatedRoute
   ) { }
@@ -28,5 +28,5 @@ export class ViewPartyPage implements OnInit {
     const mode = win && win.Ionic && win.Ionic.mode;
     return mode === 'ios' ? 'Go Back To Party List' : '';
   }
-  
+
 }

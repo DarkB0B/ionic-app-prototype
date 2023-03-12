@@ -4,7 +4,7 @@ export interface Party {
   name: string;
   description: string;
   date: string;
-  users: User[];
+  users?: User[];
   id: number;
 }
 export interface User {
@@ -74,7 +74,7 @@ export class DataService {
   public deleteParty(id: number): void {
     this.parties.splice(id, 1);
   }
-  
+
   public getPartyUsers(id: number) {
     return this.parties[id].users;
   }
